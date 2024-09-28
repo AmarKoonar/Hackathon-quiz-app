@@ -6,19 +6,21 @@ const App = () => {
   const [index, setIndex] = useState(0); 
   const [question, setQuestion] = useState(data[index]); 
   const [lock, setLock] = useState(false); 
+  const [score, setScore] = useState(0); // State to track the score
+  
+  // Define all option refs
+  const Option1 = useRef(null);
   const Option2 = useRef(null);
   const Option3 = useRef(null);
   const Option4 = useRef(null);
-  const [score,setScore] = useState(0);
-
+  
   const optionArray = [Option1, Option2, Option3, Option4]; 
 
-  
   const checkAns = (e, ans) => {
     if (!lock) { 
       if (question.ans === ans) { 
         e.target.classList.add('correct');
-        setScore(prev=>prev+1)
+        setScore(prev => prev + 1); // Increment score
       } 
       else { 
         e.target.classList.add('wrong');
@@ -28,10 +30,8 @@ const App = () => {
     }
   };
 
- 
   const nextQuestion = () => {
     if (index < data.length - 1) {
-      
       optionArray.forEach(option => option.current.classList.remove('correct', 'wrong'));
       
       const newIndex = index + 1;
@@ -55,6 +55,7 @@ const App = () => {
       <button type="button" onClick={nextQuestion}>Next</button>
       <br />
       <div className="questions">{index + 1} of {data.length} questions</div>
+      <div className="score">Score: {score}</div> {/* Display the score */}
     </div>
   );
 }
