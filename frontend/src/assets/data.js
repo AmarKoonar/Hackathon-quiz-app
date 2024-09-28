@@ -6,6 +6,7 @@ export const data = [
       option2: "4",
       option3: "5",
       option4: "6",
+      ans:4,
     },
     {
       question: "What is the capital of France?",
@@ -13,6 +14,7 @@ export const data = [
       option2: "Paris",
       option3: "Madrid",
       option4: "Rome",
+      ans:4,
     },
     // Add more questions here
   ];

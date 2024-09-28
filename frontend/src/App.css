@@ -50,3 +50,23 @@
   margin:auto;
   font-size: 15px;
 }
+
+.correct{
+  color:white;
+  background-color: #77efcd;
+}
+
+.wrong{
+  color:white;
+  background-color: #fb7070;
+}
+
+/* .correct {
+  background-color: green;
+  color: white;
+}
+
+.wrong {
+  background-color: red;
+  color: white;
+} */
